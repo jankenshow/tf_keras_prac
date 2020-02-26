@@ -8,6 +8,7 @@ int c_add(int a, int b) {
 static PyObject *add(PyObject *self, PyObject *args) {
     int a, b, c;
 
+    // pythonから渡される引数をc言語で扱える形にする
     if (!PyArg_ParseTuple(args, "ii", &a, &b)) {
         return NULL;
     }
@@ -19,6 +20,7 @@ static PyObject *add(PyObject *self, PyObject *args) {
 }
 
 static PyMethodDef addMethods[] = {
+    // python側での関数名をc_addにしている (c++側ではaddが呼び出される)
     {"c_add", add, METH_VARARGS, "summate two int args"},
     {NULL}
 };

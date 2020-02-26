@@ -5,6 +5,8 @@
 // 関数本体
 static PyObject *helloworld(PyObject *self, PyObject *args) {
     fprintf(stderr, "Hello, world\n");
+    
+    // 何も返さない時には Py_Noneを返す
     return Py_None;
 }
 
